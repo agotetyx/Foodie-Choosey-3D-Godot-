@@ -3,6 +3,7 @@ extends Node
 signal dialog_initiated(dialogue)
 signal dialog_finished()
 
+#onready var cam_change = load("res://Camera/Camera.gd")
 
 signal food_moused_over
 signal food_moused_out

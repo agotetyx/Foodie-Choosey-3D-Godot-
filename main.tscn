@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://food_quiz.tscn" type="PackedScene" id=2]
@@ -22,53 +22,102 @@
 [ext_resource path="res://Dialogues/dessert_correct.tres" type="Resource" id=20]
 [ext_resource path="res://Dialogues/dessert_incorrect.tres" type="Resource" id=21]
 [ext_resource path="res://Dialogues/fruit_incorrect.tres" type="Resource" id=22]
+[ext_resource path="res://kenney_blockycharacters_updated/Models/Non-rigged/advancedCharacter.obj" type="ArrayMesh" id=23]
+[ext_resource path="res://foodKit_v1.2/Models/GLTF format/burgerCheeseDouble.glb" type="PackedScene" id=24]
+[ext_resource path="res://foodKit_v1.2/Models/GLTF format/pizza.glb" type="PackedScene" id=25]
+[ext_resource path="res://foodKit_v1.2/Models/GLTF format/hotDog.glb" type="PackedScene" id=26]
+[ext_resource path="res://Dialogues/rand_chat.tres" type="Resource" id=27]
+[ext_resource path="res://foodKit_v1.2/Models/GLTF format/wineRed.glb" type="PackedScene" id=28]
+[ext_resource path="res://foodKit_v1.2/Models/GLTF format/cocktail.glb" type="PackedScene" id=29]
+[ext_resource path="res://foodKit_v1.2/Models/GLTF format/skewer.glb" type="PackedScene" id=30]
+[ext_resource path="res://foodKit_v1.2/Models/GLTF format/sodaGlass.glb" type="PackedScene" id=31]
+[ext_resource path="res://foodKit_v1.2/Models/GLTF format/salad.glb" type="PackedScene" id=32]
+[ext_resource path="res://Dialogues/rand_incorrect.tres" type="Resource" id=33]
+[ext_resource path="res://Dialogues/drink_chat.tres" type="Resource" id=34]
+[ext_resource path="res://Dialogues/fast_correct.tres" type="Resource" id=35]
+[ext_resource path="res://Dialogues/drink_correct.tres" type="Resource" id=36]
+[ext_resource path="res://Dialogues/drink_incorrect.tres" type="Resource" id=37]
+[ext_resource path="res://Dialogues/fast_incorrect.tres" type="Resource" id=38]
+[ext_resource path="res://Dialogues/fast_chat.tres" type="Resource" id=39]
+[ext_resource path="res://Dialogues/rand_correct.tres" type="Resource" id=40]
+[ext_resource path="res://foodKit_v1.2/Models/GLTF format/sodaCanCrushed.glb" type="PackedScene" id=41]
+[ext_resource path="res://Camera/Camera.gd" type="Script" id=42]
+[ext_resource path="res://Bg/skybg.jpg" type="Texture" id=43]
+[ext_resource path="res://pumpkin_quiz.tscn" type="PackedScene" id=44]
+[ext_resource path="res://Dialogues/Fkn_pumpkin.tres" type="Resource" id=45]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 10, 10 )
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( 5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5 )
+
+[sub_resource type="CubeMesh" id=3]
 size = Vector3( 1, 1, 1 )
 
-[sub_resource type="ConcavePolygonShape" id=3]
+[sub_resource type="ConcavePolygonShape" id=4]
 data = PoolVector3Array( -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5 )
 
-[sub_resource type="CapsuleShape" id=4]
+[sub_resource type="CapsuleShape" id=5]
 radius = 0.33
 
-[sub_resource type="CapsuleMesh" id=5]
+[sub_resource type="CapsuleMesh" id=6]
 radius = 0.35
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="Environment" id=9]
+background_mode = 4
+ambient_light_color = Color( 0.835294, 0.984314, 0.984314, 1 )
+fog_enabled = true
+fog_sun_color = Color( 0.92549, 0.709804, 0.368627, 1 )
+fog_sun_amount = 0.5
+
+[sub_resource type="Skin" id=10]
+
+[sub_resource type="DynamicFont" id=11]
 size = 50
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=12]
 size = 25
 font_data = ExtResource( 9 )
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=13]
 albedo_texture = ExtResource( 13 )
 
-[sub_resource type="SpatialMaterial" id=9]
+[sub_resource type="SpatialMaterial" id=14]
 albedo_texture = ExtResource( 12 )
+
+[sub_resource type="Shader" id=15]
+
+[sub_resource type="ShaderMaterial" id=16]
+shader = SubResource( 15 )
+
+[sub_resource type="Environment" id=17]
+background_mode = 4
 
 [node name="Main" type="Spatial"]
 
-[node name="ground" type="MeshInstance" parent="."]
+[node name="Ground" type="StaticBody" parent="."]
+
+[node name="ground" type="MeshInstance" parent="Ground"]
 transform = Transform( 4.99352, -0.0240545, 0, 0.00481709, 0.999988, 0, 0, 0, 4.99358, -1.27609, -0.149598, -0.0609865 )
 mesh = SubResource( 1 )
 material/0 = null
 
+[node name="CollisionShape" type="CollisionShape" parent="Ground"]
+transform = Transform( 4.99352, -0.0240545, 0, 0.00481709, 0.999988, 0, 0, 0, 4.99358, -1.27609, -0.149598, -0.0609865 )
+shape = SubResource( 2 )
+
 [node name="ComparisonCube" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67054, 0.497422, -4.2123 )
 visible = false
-mesh = SubResource( 2 )
+mesh = SubResource( 3 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="ComparisonCube"]
 
 [node name="CollisionShape" type="CollisionShape" parent="ComparisonCube/StaticBody"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Player" type="KinematicBody" parent="."]
 transform = Transform( -0.480071, 0, 0.87723, 0, 1.02289, 0, -0.87723, 0, -0.480071, 7.51446, 1.27083, 4.09675 )
@@ -76,25 +125,42 @@ script = ExtResource( 1 )
 _runtime_data = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0333853, -0.48507, 0.0455298 )
-shape = SubResource( 4 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -0.1, 0, 1, -4.37114e-09, -0.0333853, -0.48507, 0.0455298 )
+shape = SubResource( 5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Player"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0182845, -0.505366, 0.0651437 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="Camera" type="Camera" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 0.977622, 0, 0, 0, 1, 0, -0.0237971, 0 )
+environment = SubResource( 9 )
 current = true
+script = ExtResource( 42 )
 
 [node name="FoodChooserRay" type="RayCast" parent="Player/Camera"]
 enabled = true
-cast_to = Vector3( 0, 0, -2.78 )
+cast_to = Vector3( 0, 0, -3 )
 collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource( 6 )
 _runtime_data = ExtResource( 18 )
+
+[node name="player blocky" type="Spatial" parent="Player"]
+transform = Transform( -0.159759, 0, -0.00878365, 0, 0.16, 0, 0.00878365, 0, -0.159759, 0, -1.40388, 0 )
+visible = false
+
+[node name="MeshInstance" type="MeshInstance" parent="Player/player blocky"]
+transform = Transform( 1, 0, 3.72529e-08, 0, 1, 0, -3.72529e-08, 0, 1, 0, 0, 0 )
+mesh = ExtResource( 23 )
+skin = SubResource( 10 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -155,7 +221,7 @@ margin_right = 3.0
 rect_scale = Vector2( 1, 0.97 )
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "foodie choosie  "
 valign = 1
@@ -167,7 +233,7 @@ __meta__ = {
 [node name="FoodLabel" type="Label" parent="CanvasLayer"]
 anchor_right = 1.0
 margin_bottom = 79.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.756863, 1, 0, 1 )
@@ -193,22 +259,22 @@ _correct_food = NodePath("Food3")
 transform = Transform( 1, 1.74623e-10, 2.98023e-08, 0, 1, -1.16415e-10, -2.98023e-08, -4.65661e-10, 1, 0, 0, 0 )
 
 [node name="Body1" parent="FoodQuiz/adventurerNPC" index="0"]
-material/0 = SubResource( 8 )
+material/0 = SubResource( 13 )
 
 [node name="Head1" parent="FoodQuiz/adventurerNPC" index="1"]
-material/0 = SubResource( 8 )
+material/0 = SubResource( 13 )
 
 [node name="ArmLeft1" parent="FoodQuiz/adventurerNPC" index="2"]
-material/0 = SubResource( 8 )
+material/0 = SubResource( 13 )
 
 [node name="ArmRight1" parent="FoodQuiz/adventurerNPC" index="3"]
-material/0 = SubResource( 8 )
+material/0 = SubResource( 13 )
 
 [node name="LegLeft1" parent="FoodQuiz/adventurerNPC" index="4"]
-material/0 = SubResource( 8 )
+material/0 = SubResource( 13 )
 
 [node name="LegRight1" parent="FoodQuiz/adventurerNPC" index="5"]
-material/0 = SubResource( 8 )
+material/0 = SubResource( 13 )
 
 [node name="orange" parent="FoodQuiz" index="4"]
 transform = Transform( 0.5, 9.02219e-10, -5.96046e-08, 5.23869e-10, 0.5, 4.65661e-10, 5.96046e-08, -1.62981e-09, 0.5, 0.230031, 0.358459, -0.0523635 )
@@ -288,27 +354,27 @@ transform = Transform( 0.743383, -9.05064e-05, 0.0184295, -0.00015156, 0.355625,
 
 [node name="Body1" parent="FoodQuiz2/adventurerNPC" index="0"]
 transform = Transform( 1, 6.98492e-10, 5.96046e-08, 0, 1, 3.49246e-10, 5.96046e-08, 1.16415e-10, 1, 0, 0, 0 )
-material/0 = SubResource( 9 )
+material/0 = SubResource( 14 )
 
 [node name="Head1" parent="FoodQuiz2/adventurerNPC" index="1"]
 transform = Transform( 1, 6.98492e-10, 5.96046e-08, 0, 1, 3.49246e-10, 5.96046e-08, 1.16415e-10, 1, 0, 0, 0 )
-material/0 = SubResource( 9 )
+material/0 = SubResource( 14 )
 
 [node name="ArmLeft1" parent="FoodQuiz2/adventurerNPC" index="2"]
 transform = Transform( 1, 6.98492e-10, 5.96046e-08, 0, 1, 3.49246e-10, 5.96046e-08, 1.16415e-10, 1, 0, 0, 0 )
-material/0 = SubResource( 9 )
+material/0 = SubResource( 14 )
 
 [node name="ArmRight1" parent="FoodQuiz2/adventurerNPC" index="3"]
 transform = Transform( 1, 6.98492e-10, 5.96046e-08, 0, 1, 3.49246e-10, 5.96046e-08, 1.16415e-10, 1, 0, 0, 0 )
-material/0 = SubResource( 9 )
+material/0 = SubResource( 14 )
 
 [node name="LegLeft1" parent="FoodQuiz2/adventurerNPC" index="4"]
 transform = Transform( 1, 6.98492e-10, 5.96046e-08, 0, 1, 3.49246e-10, 5.96046e-08, 1.16415e-10, 1, 0, 0, 0 )
-material/0 = SubResource( 9 )
+material/0 = SubResource( 14 )
 
 [node name="LegRight1" parent="FoodQuiz2/adventurerNPC" index="5"]
 transform = Transform( 0.999999, -0.00105904, 0.000451684, 0.00105875, 0.999999, 0.000659053, -0.000452429, -0.000658561, 0.999999, 0, 0, 0 )
-material/0 = SubResource( 9 )
+material/0 = SubResource( 14 )
 
 [node name="orange" parent="FoodQuiz2" index="4"]
 transform = Transform( 0.5, 6.40284e-10, -7.45058e-08, 3.49246e-10, 0.5, 2.91038e-10, 2.98023e-08, -1.28057e-09, 0.5, 0.158614, 0.373688, -0.447511 )
@@ -354,6 +420,142 @@ spot_angle = 19.6118
 [node name="donutSprinkles" parent="FoodQuiz2/Food3" index="2" instance=ExtResource( 16 )]
 transform = Transform( -0.846518, 0.529237, -0.0575555, 0.475736, 0.703527, -0.527948, -0.238918, -0.474298, -0.847325, -0.00190043, -0.077069, -0.0253065 )
 
+[node name="FoodQuiz3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.1519, -0.00447853, 1.93277, 2.07324e-05, 2.24999, 0.00520124, -1.93278, -0.00264501, 1.15189, -2.74503, -0.180355, 15.9491 )
+_dialogue = ExtResource( 39 )
+_dialogue_correct = ExtResource( 35 )
+_dialogue_incorrect = ExtResource( 38 )
+_correct_food = NodePath("Food/burgerCheeseDouble")
+
+[node name="Body1" parent="FoodQuiz3/adventurerNPC" index="0"]
+material/0 = SubResource( 16 )
+
+[node name="Head1" parent="FoodQuiz3/adventurerNPC" index="1"]
+material/0 = SubResource( 16 )
+
+[node name="ArmLeft1" parent="FoodQuiz3/adventurerNPC" index="2"]
+material/0 = SubResource( 16 )
+
+[node name="ArmRight1" parent="FoodQuiz3/adventurerNPC" index="3"]
+material/0 = SubResource( 16 )
+
+[node name="LegLeft1" parent="FoodQuiz3/adventurerNPC" index="4"]
+material/0 = SubResource( 16 )
+
+[node name="LegRight1" parent="FoodQuiz3/adventurerNPC" index="5"]
+material/0 = SubResource( 16 )
+
+[node name="Food" parent="FoodQuiz3" index="5"]
+food_name = "bURGER"
+
+[node name="SpotLight" parent="FoodQuiz3/Food" index="0"]
+shadow_enabled = true
+spot_range = 1.46504
+spot_angle = 21.8544
+
+[node name="burgerCheeseDouble" parent="FoodQuiz3/Food" index="2" instance=ExtResource( 24 )]
+transform = Transform( 1, -0.000181505, -8.43406e-06, 0.000181503, 1, -0.00029192, 8.07643e-06, 0.00029192, 1, -0.000157356, -0.158747, -0.000331879 )
+
+[node name="Food2" parent="FoodQuiz3" index="6"]
+food_name = "hotdog"
+
+[node name="SpotLight" parent="FoodQuiz3/Food2" index="0"]
+shadow_enabled = true
+spot_range = 1.39939
+spot_angle = 17.4304
+
+[node name="hotDog" parent="FoodQuiz3/Food2" index="2" instance=ExtResource( 26 )]
+transform = Transform( 0.831006, 0.401003, 0.385518, -0.530007, 0.781201, 0.329878, -0.168885, -0.478457, 0.861717, -7.9155e-05, -0.0818731, -0.000174522 )
+
+[node name="Food3" parent="FoodQuiz3" index="7"]
+food_name = "Pizza"
+
+[node name="SpotLight" parent="FoodQuiz3/Food3" index="0"]
+shadow_enabled = true
+spot_range = 1.31446
+spot_angle = 25.6585
+
+[node name="pizza" parent="FoodQuiz3/Food3" index="2" instance=ExtResource( 25 )]
+transform = Transform( 0.574261, 0.169493, 0.0386904, -0.169761, 0.517883, 0.250956, 0.0374968, -0.251137, 0.543621, 0.000116348, 0.11666, 0.000244141 )
+
+[node name="FoodQuiz4" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.0204539, -0.00520084, 2.2499, 2.07324e-05, 2.24999, 0.00520124, -2.24991, 6.79945e-05, -0.0204554, 5.66856, -0.180355, 15.9491 )
+_dialogue = ExtResource( 34 )
+_dialogue_correct = ExtResource( 36 )
+_dialogue_incorrect = ExtResource( 37 )
+_correct_food = NodePath("Food2")
+
+[node name="Food" parent="FoodQuiz4" index="5"]
+food_name = "Wine"
+
+[node name="wineRed" parent="FoodQuiz4/Food" index="2" instance=ExtResource( 28 )]
+transform = Transform( 0.951594, -0.306607, 0.0214798, 0.306499, 0.941379, -0.140934, 0.0229907, 0.140695, 0.989786, -8.10623e-05, -0.0816224, -0.000169754 )
+
+[node name="Food2" parent="FoodQuiz4" index="6"]
+food_name = "Soda"
+
+[node name="sodaGlass" parent="FoodQuiz4/Food2" index="1" instance=ExtResource( 31 )]
+transform = Transform( 0.948009, -0.315944, 0.0381722, 0.317313, 0.929254, -0.189205, 0.0243064, 0.19148, 0.981195, -0.000118256, -0.1188, -0.000247955 )
+
+[node name="Food3" parent="FoodQuiz4" index="7"]
+food_name = "Martini"
+
+[node name="cocktail" parent="FoodQuiz4/Food3" index="2" instance=ExtResource( 29 )]
+transform = Transform( 0.96431, -0.264306, 0.0157456, 0.264227, 0.956776, -0.121509, 0.0170504, 0.121332, 0.992465, -9.72748e-05, -0.0932111, -0.000191689 )
+
+[node name="FoodQuiz5" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.21554, -0.000927234, 0.392289, 2.07324e-05, 2.24999, 0.00520124, -0.392289, -0.00511796, 2.21553, -7.38089, -0.180355, 11.0902 )
+_dialogue = ExtResource( 27 )
+_dialogue_correct = ExtResource( 40 )
+_dialogue_incorrect = ExtResource( 33 )
+_correct_food = NodePath("Food")
+
+[node name="Food" parent="FoodQuiz5" index="5"]
+food_name = "Kebabs"
+
+[node name="skewer" parent="FoodQuiz5/Food" index="2" instance=ExtResource( 30 )]
+transform = Transform( 0.89312, 0.426937, -0.141638, -0.449792, 0.851163, -0.270574, 0.00503844, 0.305362, 0.952223, 0.000117779, 0.11666, 0.000244141 )
+
+[node name="Food2" parent="FoodQuiz5" index="6"]
+food_name = "idk some dirty shit"
+
+[node name="salad" parent="FoodQuiz5/Food2" index="1" instance=ExtResource( 32 )]
+transform = Transform( 0.893349, 0.448377, 0.0297573, -0.448506, 0.885592, 0.120705, 0.0277682, -0.121177, 0.992243, -9.91821e-05, -0.101371, -0.00021553 )
+
+[node name="Food3" parent="FoodQuiz5" index="7"]
+food_name = "Trash"
+
+[node name="sodaCanCrushed" parent="FoodQuiz5/Food3" index="1" instance=ExtResource( 41 )]
+transform = Transform( 0.930916, -0.364794, 0.0178881, 0.364713, 0.925849, -0.0989473, 0.0195337, 0.0986349, 0.994932, 3.86238e-05, 0.036798, 7.62939e-05 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="skybg" type="Sprite" parent="Control"]
+position = Vector2( 539.013, 284.995 )
+scale = Vector2( 1.21671, 1.16623 )
+texture = ExtResource( 43 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 17 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( -0.835203, -0.549941, 0, 0.549941, -0.835203, 0, 0, 0, 1, -19.8145, 19.1859, 0 )
+
+[node name="npc" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0925, 0, 15.4869 )
+
+[node name="FoodQuiz" parent="npc" instance=ExtResource( 44 )]
+transform = Transform( 2.03695, -0.00222798, 0.955686, 2.07324e-05, 2.24999, 0.00520124, -0.955689, -0.00469994, 2.03694, 1.90731, -0.039211, -0.339859 )
+_dialogue = ExtResource( 45 )
+_dialogue_correct = ExtResource( 45 )
+_dialogue_incorrect = ExtResource( 45 )
+_correct_food = NodePath(".")
+
 [editable path="FoodQuiz"]
 
 [editable path="FoodQuiz/adventurerNPC"]
@@ -373,3 +575,29 @@ transform = Transform( -0.846518, 0.529237, -0.0575555, 0.475736, 0.703527, -0.5
 [editable path="FoodQuiz2/Food2"]
 
 [editable path="FoodQuiz2/Food3"]
+
+[editable path="FoodQuiz3"]
+
+[editable path="FoodQuiz3/adventurerNPC"]
+
+[editable path="FoodQuiz3/Food"]
+
+[editable path="FoodQuiz3/Food2"]
+
+[editable path="FoodQuiz3/Food3"]
+
+[editable path="FoodQuiz4"]
+
+[editable path="FoodQuiz4/Food"]
+
+[editable path="FoodQuiz4/Food2"]
+
+[editable path="FoodQuiz4/Food3"]
+
+[editable path="FoodQuiz5"]
+
+[editable path="FoodQuiz5/Food"]
+
+[editable path="FoodQuiz5/Food2"]
+
+[editable path="FoodQuiz5/Food3"]

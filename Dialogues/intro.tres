@@ -6,4 +6,4 @@
 [resource]
 script = ExtResource( 1 )
 avatar_texture = ExtResource( 2 )
-dialog_slides = [ "welcome to foodie choosie", "explore the market and pick the best foods ", "I assure you, you are not in a simulation", "", "" ]
+dialog_slides = [ "welcome to foodie choosie", "explore the market and pick the best foods ", "I assure you, you are not in a simulation" ]

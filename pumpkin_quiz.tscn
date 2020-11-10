@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://food_quiz.gd" type="Script" id=1]
+[ext_resource path="res://food.tscn" type="PackedScene" id=2]
+[ext_resource path="res://foodKit_v1.2/Models/GLTF format/pumpkinBasic.glb" type="PackedScene" id=3]
+[ext_resource path="res://Dialogues/fruit_chat.tres" type="Resource" id=8]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.940208, 1, 1 )
+
+[node name="FoodQuiz" type="Spatial"]
+transform = Transform( 2.03695, -0.00222798, 0.955686, 2.07324e-05, 2.24999, 0.00520124, -0.955689, -0.00469994, 2.03694, -3.10017, -0.169866, 2.16512 )
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+_dialogue = ExtResource( 8 )
+
+[node name="DialogTrigger" type="Area" parent="."]
+transform = Transform( 0.930945, -0.000538399, 0.233059, 0.000502462, 0.96946, -0.000302516, -0.217205, -0.000298372, 1.0994, -0.0148749, -0.0106753, -0.115526 )
+
+[node name="CollisionShape" type="CollisionShape" parent="DialogTrigger"]
+transform = Transform( 0.743383, -9.05064e-05, 0.0184295, -0.00015156, 0.355625, 0.000268061, -0.0390587, 8.83728e-05, 0.9011, -0.0848918, 0.391082, -0.00796199 )
+shape = SubResource( 1 )
+
+[node name="Food2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.71535, 9.80452e-09, -1.27549, -4.654e-09, 3, 1.31528e-08, 1.27549, -9.92611e-09, 2.71535, -0.0120956, 0.595906, -0.00812238 )
+food_name = "Fkn pumpkin"
+
+[node name="pumpkinBasic" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2.71535, 1.11759e-08, -1.27549, -4.77007e-09, 3, 1.21072e-08, 1.27549, -1.07102e-08, 2.71535, -0.04707, 0.596137, -0.107601 )
+[connection signal="body_entered" from="DialogTrigger" to="." method="_on_DialogTrigger_body_entered"]

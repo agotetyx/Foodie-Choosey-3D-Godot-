@@ -4,8 +4,9 @@ class_name Food
 
 export(String) var food_name 
 
-var _spin_speed: float = 180
+var _spin_speed: float = 50
 var _mesh: Spatial
+#var momentum
 
 func _ready():
 	GameEvents.connect("food_moused_over", self, "_on_mouse_entered")
@@ -26,12 +27,15 @@ func _process(delta):
 func _on_mouse_entered(food: Food):
 	if food == self:
 		$SpotLight.visible = true
+		
 		#print ("mouse over food")
 	 # Replace with function body.
 	
 func _on_mouse_out():
 	print ("spotlight off")
 	$SpotLight.visible = false
+	_mesh.rotation_degrees.y -= _spin_speed
+	
 	
 func _on_mouse_clicked(food: Food):
 	if food == self:

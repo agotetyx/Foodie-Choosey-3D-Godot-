@@ -32,6 +32,7 @@ func movement() -> void:
 	var movement_vector: Vector3
 	var forward_movement: Vector3
 	var sideways_movement: Vector3
+	var jump_movement: Vector3
 	#print(transform.basis.x)
 	
 	if Input.is_action_pressed("move_forward"):
@@ -43,7 +44,12 @@ func movement() -> void:
 		sideways_movement = -transform.basis.x
 	elif Input.is_action_pressed("move_right"):
 		sideways_movement = transform.basis.x
+	if Input.is_action_just_pressed("jump"):
+		pass #jump_movement = 
 		
+	#movemment_vector.y += gravity * delta	
 	movement_vector = (forward_movement + sideways_movement) 
 	movement_vector = movement_vector.normalized()
 	move_and_slide(movement_vector* _move_speed)
+	
+
